@@ -7,4 +7,4 @@ As with any Aurora homebrew file, you'll want to unzip the downloaded files and 
 
 Should you need to download Aurora, you can download the file from this link: https://aurorabuilder.com/get-started/
 
-You can find the creator's patreon here: https://www.patreon.com/aurorabuilder/
+You can find the creator of Aurora's patreon here: https://www.patreon.com/aurorabuilder/
