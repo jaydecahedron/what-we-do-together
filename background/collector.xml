@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <elements>
+	
+	<elements>
+<info>
+    <update version="0.0.1">
+        <file name="background-collector.xml"
+    url="https://raw.githubusercontent.com/jaydecahedron/what-we-do-together/main/background/collector.xml" />
+    </update>
+</info>
+</elements>
+	
 	<element name="Collector" type="Background" source="HOMEBREW_WWDITS" id="ID_BACKGROUND_COLLECTOR">
 		<description>
 			<p>You have spent your time as a vampire collecting items of materialistic importance.</p>
