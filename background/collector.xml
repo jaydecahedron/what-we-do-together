@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <elements>
-	
-	<elements>
+
+<elements>
 <info>
     <update version="0.0.1">
         <file name="background-collector.xml"
@@ -9,8 +9,8 @@
     </update>
 </info>
 </elements>
-	
-	<element name="Collector" type="Background" source="HOMEBREW_WWDITS" id="ID_BACKGROUND_COLLECTOR">
+
+	<element name="Collector" type="Background" source="HOMEBREW_WWDITS" id="ID_BACKGROUND_COLLECTOR_WWDITS">
 		<description>
 			<p>You have spent your time as a vampire collecting items of materialistic importance.</p>
 			
@@ -20,9 +20,11 @@
 				<li><strong>Equipment:</strong>One wondrous item (Stone of Good Luck, Cloak of Protection, Hat of Disguise, or Pearl of Power), a vial of ancient blood or energy, an artifact from the year you became a vampire, a famous piece of artwork that features yourself in the piece of work, and a belt pouch containing 15 gp</li>
 			    <li><strong>Vial of Ancient Blood | Vial of Ancient Energy:</strong>Refills a variable amount of times until it’s magic is lost. Roll 1d20 to refill the vial - DC is 1 through 20 with each successful refill increasing the DC by 1. If you have bless, you may use bless on this roll. Use this blood or energy to feed.</li>
             </ul>
-			<div element="ID_BACKGROUND_FEATURE_SHELTER_OF_THE_FAITHFUL" />
+			<div element="ID_BACKGROUND_FEATURE_FINDERS-KEEPERS" />
 			<h5>SUGGESTED CHARACTERISTICS</h5>
-			<p>Acolytes are shaped by their experience in temples or other religious communities. Their study of the history and tenets of their faith and their relationships to temples, shrines, or hierarchies affect their mannerisms and ideals. Their flaws might be some hidden hypocrisy or heretical idea, or an ideal or bond taken to an extreme.</p>
+			<p>As a collector, items of materialistic import call your attention and you are able to gain additional insight about objects you are inspecting. You have been collecting items throughout your time as an immortal creature of the night and you have amassed a wide variety of items that you no longer remember everything you have. If you are ever in need of a less common item, it’s possible to find such an item in your collection.
+
+If you see an item you wish to collect, you have advantage on either one persuasion or one sleight of hand roll. You might also have ties to artists, collectors, and traders that can help you locate material objects of interest. If you remain on good terms within these communities of connection, you may find yourself gifted items without request or payment.</p>
 		</description>
 		<setters>
 			<set name="short">Insight, Religion, 2 Languages</set>
@@ -30,39 +32,39 @@
 		<rules>
 			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_INSIGHT" />
 			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_RELIGION" />
-			<select type="Language" name="Language (Acolyte)" number="2" supports="Standard||Exotic" />
-			<grant type="Background Feature" id="ID_BACKGROUND_FEATURE_SHELTER_OF_THE_FAITHFUL" requirements="!ID_INTERNAL_GRANT_OPTIONAL_BACKGROUND_FEATURE"/>
+			<select type="Language" name="Language (Collector)" number="2" supports="Standard||Exotic" />
+			<grant type="Background Feature" id="ID_BACKGROUND_FEATURE_FINDERS-KEEPERS" requirements="!ID_INTERNAL_GRANT_OPTIONAL_BACKGROUND_FEATURE"/>
 			<select type="Background Feature" name="Variant Feature" supports="Optional Background Feature" optional="true" />
 			<select type="List" name="Personality Trait" number="2">
-				<item id="1">I idolize a particular hero of my faith, and constantly refer to that person’s deeds and example.</item>
-				<item id="2">I can find common ground between the fiercest enemies, empathizing with them and always working toward peace.</item>
-				<item id="3">I see omens in every event and action. The gods try to speak to us, we just need to listen</item>
-				<item id="4">Nothing can shake my optimistic attitude.</item>
-				<item id="5">I quote (or misquote) sacred texts and proverbs in almost every situation.</item>
-				<item id="6">I am tolerant (or intolerant) of other faiths and respect (or condemn) the worship of other gods.</item>
-				<item id="7">I’ve enjoyed fine food, drink, and high society among my temple’s elite. Rough living grates on me.</item>
-				<item id="8">I’ve spent so long in the temple that I have little practical experience dealing with people in the outside world.</item>
+				<item id="1">I like to collect a single type of object and constantly talk about my collected items.</item>
+				<item id="2">I can find common ground between the fiercest enemies, bargaining  with them an item from my collection in an attempt of peaceful recourse.</item>
+				<item id="3">I see omens in every item of my collection. The gods try to speak to us, we just need to listen.</item>
+				<item id="4">I wish to add anything and everything to my collection. Nothing is of no value.</item>
+				<item id="5">I know almost nothing about the items in my collection and often lie or make up stories about their origins or history.</item>
+				<item id="6">I am very selective about the items in my collection. Items must meet a rigorous amount of requirements.</item>
+				<item id="7">I collect my items to destroy them. I believe the universe needs to be rid of these objects.</item>
+				<item id="8">I've spent so long amongst the objects, admiring and appraising my collection, that I have little practical experience dealing with others.</item>
 			</select>
 			<select type="List" name="Ideal">
-				<item id="1">Tradition. The ancient traditions of worship and sacrifice must be preserved and upheld. (Lawful)</item>
-				<item id="2">Charity. I always try to help those in need, no matter what the personal cost. (Good)</item>
-				<item id="3">Change. We must help bring about the changes the gods are constantly working in the world. (Chaotic)</item>
-				<item id="4">Power. I hope to one day rise to the top of my faith’s religious hierarchy. (Lawful)</item>
-				<item id="5">Faith. I trust that my deity will guide my actions. I have faith that if I work hard, things will go well. (Lawful)</item>
-				<item id="6">Aspiration. I seek to prove myself worthy of my god’s favor by matching my actions against his or her teachings. (Any)</item>
+				<item id="1">Tradition. The ancient objects must be preserved and understood. (Lawful)</item>
+				<item id="2">Charity. I always try to share my collection, no matter what the personal cost. (Good)</item>
+				<item id="3">Passion. I must show everyone the true value of my collection. (Chaotic)</item>
+				<item id="4">Power. I hope to one day use my collection to advance beyond my peers. (Lawful)</item>
+				<item id="5">Peace. I trust that my collection will help us find paths to peace. (Lawful)</item>
+				<item id="6">Aspiration. I seek to prove myself worthy with all that I collect. (Any)</item>
 			</select>
 			<select type="List" name="Bond">
-				<item id="1">I would die to recover an ancient relic of my faith that was lost long ago.</item>
-				<item id="2">I will someday get revenge on the corrupt temple hierarchy who branded me a heretic.</item>
-				<item id="3">I owe my life to the priest who took me in when my parents died.</item>
-				<item id="4">Everything I do is for the common people.</item>
-				<item id="5">I will do anything to protect the temple where I served.</item>
-				<item id="6">I seek to preserve a sacred text that my enemies consider heretical and seek to destroy.</item>
+				<item id="1">I would die to recover an ancient relic that was lost long ago.</item>
+				<item id="2">I will someday rid the world of evil.</item>
+				<item id="3">I owe my life to a fellow collector that saved me from a cursed existence.</item>
+				<item id="4">Everything I do is for my fellow Creatures of the Night.</item>
+				<item id="5">I will do anything to protect my collection.</item>
+				<item id="6">I seek to preserve what others seek to destroy.</item>
 			</select>
 			<select type="List" name="Flaw">
 				<item id="1">I judge others harshly, and myself even more severely.</item>
-				<item id="2">I put too much trust in those who wield power within my temple’s hierarchy.</item>
-				<item id="3">My piety sometimes leads me to blindly trust those that profess faith in my god.</item>
+				<item id="2">I could easily lose myself in my collection if given the chance.</item>
+				<item id="3">My piety sometimes leads me to blindly trust those that profess their love of my collection.</item>
 				<item id="4">I am inflexible in my thinking.</item>
 				<item id="5">I am suspicious of strangers and expect the worst of them.</item>
 				<item id="6">Once I pick a goal, I become obsessed with it to the detriment of everything else in my life.</item>
@@ -70,12 +72,12 @@
 		</rules>
 	</element>
 	
-	<element name="Feature: Shelter of the Faithful" type="Background Feature" source="Player’s Handbook" id="ID_BACKGROUND_FEATURE_SHELTER_OF_THE_FAITHFUL">
+	<element name="Feature: Finders Keepers" type="Background Feature" source="HOMEBREW_WWDITS" id="ID_BACKGROUND_FEATURE_FINDERS-KEEPERS">
 		<supports>Background Feature</supports>
 		<description>
-			<p>As an acolyte, you command the respect of those who share your faith, and you can perform the religious ceremonies of your deity. You and your adventuring companions can expect to receive free healing and care at a temple, shrine, or other established presence of your faith, though you must provide any material components needed for spells. Those who share your religion will support you (but only you) at a modest lifestyle.</p>
-			<p class="indent">You might also have ties to a specific temple dedicated to your chosen deity or pantheon, and you have a residence there. This could be the temple where you used to serve, if you remain on good terms with it, or a temple where you have found a new home. While near your temple, you can call upon the priests for assistance, provided the assistance you ask for is not hazardous and you remain in good standing with your temple.</p>
+			<p>As a collector, items of materialistic import call your attention and you are able to gain additional insight about objects you are inspecting. You have been collecting items throughout your time as an immortal creature of the night and you have amassed a wide variety of items that you no longer remember everything you have. If you are ever in need of a less common item, it’s possible to find such an item in your collection.</p>
+			<p class="indent">If you see an item you wish to collect, you have advantage on either one persuasion or one sleight of hand roll. You might also have ties to artists, collectors, and traders that can help you locate material objects of interest. If you remain on good terms within these communities of connection, you may find yourself gifted items without request or payment.</p>
 		</description>
-		<sheet alt="Shelter of the Faithful" />
+		<sheet alt="Finders Keepers" />
 	</element>
 </elements>
