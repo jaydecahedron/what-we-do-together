@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+
+<elements>
+<info>
+    <update version="0.0.1">
+        <file name="origin-energy-vampire.xml"
+    url="https://raw.githubusercontent.com/jaydecahedron/what-we-do-together/main/background/collector.xml" />
+    </update>
+</info>
+</elements>
+
+<<element name="Energy Vampire" type="Race" source="HOMEBREW_WWDITS" id="ID_HOMEBREW_WWDITS_RAEnergy Vampire">
+    <description>
+        <p>All vampires can be a member of the vampiric council, act in accordance with vampire protocols and ordinances. All vampires can be considered in the line of vampire royalty.
+
+                Psychic vampires are the most common kind of vampire. Energy vampires are often rude to the point of upset or boredom due to their need to drain others. Emotional Vampires hold the same powers of Energy Vampires as they are an advanced version of Energy Vampires that instead feeds off of sadness and pity in place of frustration or anger. 
+                
+                Psychic vampires’ eyes glow blue when they are gaining massive amounts of power. They are the only type of vampire that can drain another vampire. Their origin is yet unknown. In comparison to bloodsuckers, psychic vampires are usually up to date with societal technology and culture.</p>
+     
+        <h4>Energy Vampire Traits</h4>
+        <p></p>
+        	<p class="indent"><strong><em>Ability Score Increase.</em></strong> Your Constitution score increases by 2.</p>
+            <p class="indent"><strong><em>Age.</em></strong> Energy Vampires live to exactly 100 years. Additional lore is to be discussed with your DM.</p>
+            <p class="indent"><strong><em>Alignment.</em></strong> Typically chaotic or evil in some variation due to their methods of feeding off others' energy.</p>
+            <p class="indent"><strong><em>Size.</em></strong> Medium.</p>
+            <p class="indent"><strong><em>Speed.</em></strong> 30ft</p>
+			<p class="indent" id="ID_Intoxicating_Presence."><strong><em>Intoxicating Presence.</em></strong> You can cast the charm person spell once per Long Rest as a 1st-level spell. Once you reach 5th level, you can also cast the enthrall spell once per Long Rest. Charisma is your spellcasting ability for these spells. Creatures Charmed this way do not know they were charmed by you.</p>
+		    <p class="indent" id="ID_Feeders_Insight."><strong><em>Feader's Insight.</em></strong> You know the current emotional state of any humanoid creature you see within 5ft if they're angry, sad, or bored.</p>
+            <p class="indent" id="ID_Energy_Siphon."><strong><em>Energy Siphon.</em></strong> You sustain yourself by feeding on the emotions and life essence of other creatures. Using your action you can force a creature you have just spoken to within 15ft to make a Constitution saving throw as you attempt to drain away its life force.The DC of this saving throw is 10 + your Constitution modifier + your proficiency bonus.
+            To successfully siphon from an Emotional Vampire, you must succeed on an opposed constitution saving throw.
+            A creature takes 2d6 psychic damage per turn on a failed save, and half as much damage on a successful one. The damage increases to 3d6 at 6th level, 4d6 at 11th level, and 5d6 at 16th level.
+            On a failed save, the creature also suffers one level of exhaustion, you regain one level of exhaustion, gain temporary hit points equal to half the amount of damage the target takes, and you do not need to eat, sleep, or drink for the next 48 hours, as the energy nourishes you.
+            Any Creature Charmed by you automatically fails its saving throw, instead suffers two levels of exhaustion, and continues to be charmed. If you do not successfully use this ability for a week or more, you suffer one level of exhaustion that cannot be removed until you successfully use the ability again.
+            You cannot be charmed or put to sleep by magical means.
+            After you use this ability once you can't use it again until you complete a long rest.</p>
+            <p class="indent" id="ID_Physical_Flight."><strong><em>Physical Flight.</em></strong> If you have succeeded on an Energy Siphon within the past 3 days, you have the ability to fly up to 10ft above the ground with a flying speed of 25ft. If you are wearing heavy armour, your flying speed is 15ft. You can fly three times for up to 10 minutes per long rest.</p>
+        <p class="indent"><strong><em>Languages.</em></strong> Common, Infernal</p>
+    </description>
+    <sheet display="false" />
+    <rules>
+        <grant type="Language" id="ID_LANGUAGE_COMMON" />
+        <grant type="Language" id="ID_LANGUAGE_INFERNAL" />
+        <grant type="Size" id="ID_SIZE_MEDIUM" />
+    </rules>
+
+<!--Needs editing and inclusion of 5th level spell addition with code that notes they get it at 5th level-->
+    <sheet usage="1/Long Rest">
+			<description><element name="Charm Person" type="Spell" source="Player's Handbook" id="ID_PHB_SPELL_Charm Person">
+                <supports><strong>Intoxicating Presence.</strong></supports>
+                <description>
+                    <p></p>
+                </description>
+                <setters>
+                    <set name="keywords"></set>
+                    <set name="level">1</set>
+                    <set name="school">Evocation</set>
+                    <set name="time">time</set>
+                    <set name="range">range</set>
+                    <set name="duration">duration</set>
+                    <set name="hasVerbalComponent">true</set>
+                    <set name="hasSomaticComponent">true</set>
+                    <set name="hasMaterialComponent">true</set>
+                    <set name="materialComponent">component</set>
+                    <set name="isConcentration">false</set>
+                    <set name="isRitual">false</set>
+                </setters>
+            </element></description>
+</element>
+
+
+<!-- needs editing and review, not sure, trying to get stuff to show up on character sheet here-->
+	<element name="Feature: Finders Keepers" type="Background Feature" source="HOMEBREW_WWDITS" id="ID_BACKGROUND_FEATURE_FINDERS-KEEPERS">
+		<supports>Background Feature</supports>
+		<description>
+			<p>As a collector, items of materialistic import call your attention and you are able to gain additional insight about objects you are inspecting. You have been collecting items throughout your time as an immortal creature of the night and you have amassed a wide variety of items that you no longer remember everything you have. If you are ever in need of a less common item, it’s possible to find such an item in your collection.</p>
+			<p class="indent">If you see an item you wish to collect, you have advantage on either one persuasion or one sleight of hand roll. You might also have ties to artists, collectors, and traders that can help you locate material objects of interest. If you remain on good terms within these communities of connection, you may find yourself gifted items without request or payment.</p>
+		</description>
+		<sheet alt="Finders Keepers" />
+	</element>
+
+
+</elements>
