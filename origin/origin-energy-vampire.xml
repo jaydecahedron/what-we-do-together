@@ -25,24 +25,79 @@
             <p class="indent"><strong><em>Alignment.</em></strong> Typically chaotic or evil in some variation due to their methods of feeding off others' energy.</p>
             <p class="indent"><strong><em>Size.</em></strong> Medium.</p>
             <p class="indent"><strong><em>Speed.</em></strong> 30ft</p>
-			<p class="indent" id="ID_Intoxicating_Presence."><strong><em>Intoxicating Presence.</em></strong> You can cast the charm person spell once per Long Rest as a 1st-level spell. Once you reach 5th level, you can also cast the enthrall spell once per Long Rest. Charisma is your spellcasting ability for these spells. Creatures Charmed this way do not know they were charmed by you.</p>
-		    <p class="indent" id="ID_Feeders_Insight."><strong><em>Feader's Insight.</em></strong> You know the current emotional state of any humanoid creature you see within 5ft if they're angry, sad, or bored.</p>
-            <p class="indent" id="ID_Energy_Siphon."><strong><em>Energy Siphon.</em></strong> You sustain yourself by feeding on the emotions and life essence of other creatures. Using your action you can force a creature you have just spoken to within 15ft to make a Constitution saving throw as you attempt to drain away its life force.The DC of this saving throw is 10 + your Constitution modifier + your proficiency bonus.
+			<p class="indent" id="ID_Intoxicating_Presence"><strong><em>Intoxicating Presence.</em></strong> You can cast the charm person spell once per Long Rest as a 1st-level spell. Once you reach 5th level, you can also cast the enthrall spell once per Long Rest. Charisma is your spellcasting ability for these spells. Creatures Charmed this way do not know they were charmed by you.</p>
+		    <p class="indent" id="ID_Feeders_Insight"><strong><em>Feader's Insight.</em></strong> You know the current emotional state of any humanoid creature you see within 5ft if they're angry, sad, or bored.</p>
+            <p class="indent" id="ID_Energy_Siphon"><strong><em>Energy Siphon.</em></strong> You sustain yourself by feeding on the emotions and life essence of other creatures. Using your action you can force a creature you have just spoken to within 15ft to make a Constitution saving throw as you attempt to drain away its life force.The DC of this saving throw is 10 + your Constitution modifier + your proficiency bonus.
             To successfully siphon from an Emotional Vampire, you must succeed on an opposed constitution saving throw.
             A creature takes 2d6 psychic damage per turn on a failed save, and half as much damage on a successful one. The damage increases to 3d6 at 6th level, 4d6 at 11th level, and 5d6 at 16th level.
             On a failed save, the creature also suffers one level of exhaustion, you regain one level of exhaustion, gain temporary hit points equal to half the amount of damage the target takes, and you do not need to eat, sleep, or drink for the next 48 hours, as the energy nourishes you.
             Any Creature Charmed by you automatically fails its saving throw, instead suffers two levels of exhaustion, and continues to be charmed. If you do not successfully use this ability for a week or more, you suffer one level of exhaustion that cannot be removed until you successfully use the ability again.
             You cannot be charmed or put to sleep by magical means.
             After you use this ability once you can't use it again until you complete a long rest.</p>
-            <p class="indent" id="ID_Physical_Flight."><strong><em>Physical Flight.</em></strong> If you have succeeded on an Energy Siphon within the past 3 days, you have the ability to fly up to 10ft above the ground with a flying speed of 25ft. If you are wearing heavy armour, your flying speed is 15ft. You can fly three times for up to 10 minutes per long rest.</p>
+            <p class="indent" id="ID_Physical_Flight_Energy"><strong><em>Physical Flight.</em></strong> If you have succeeded on an Energy Siphon within the past 3 days, you have the ability to fly up to 10ft above the ground with a flying speed of 25ft. If you are wearing heavy armour, your flying speed is 15ft. You can fly three times for up to 10 minutes per long rest.</p>
         <p class="indent"><strong><em>Languages.</em></strong> Common, Infernal</p>
     </description>
     <sheet display="false" />
     <rules>
         <grant type="Language" id="ID_LANGUAGE_COMMON" />
         <grant type="Language" id="ID_LANGUAGE_INFERNAL" />
-        <grant type="Size" id="ID_SIZE_MEDIUM" />
+     
     </rules>
+
+    <setters>
+    	<set name="names-format">{{name}} {{surname}} {{title}}</set>
+			<set name="height" modifier="2d10">4'8"</set>
+			<set name="weight" modifier="1d100+50">120 lb.</set>
+    </setters>
+
+    <!-- copied aasimar race-->
+    	<sheet display="false" />
+		<rules>
+			<stat name="charisma" value="2" />
+			<stat name="innate speed" value="30" bonus="base" />
+			<grant type="Size" id="ID_SIZE_MEDIUM" />
+			<grant type="Language" id="ID_LANGUAGE_COMMON" />
+			<grant type="Language" id="ID_ID_LANGUAGE_INFERNAL" />
+			<grant type="Racial Trait" id="ID_Intoxicating_Presence" />
+			<grant type="Racial Trait" id="ID_Feeders_Insight" />
+			<grant type="Racial Trait" id="ID_Energy_Siphon" />
+			<grant type="Racial Trait" id="ID_Physical_Flight_Energy" />
+		</rules>
+	</element>
+	<element name="Celestial Resistance" type="Racial Trait" source="Volo’s Guide to Monsters" id="ID_WOTC_VGTM_RACIAL_TRAIT_AASIMAR_CELESTIAL_RESISTANCE">
+		<description>
+			<html>&lt;p&gt;You have resistance to necrotic damage and radiant damage.&lt;/p&gt;</html>
+		</description>
+		<sheet display="false">
+			<description>You have resistance to necrotic damage and radiant damage.</description>
+		</sheet>
+		<rules>
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_NECROTIC" />
+			<grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_RADIANT" />
+		</rules>
+	</element>
+	<element name="Healing Hands" type="Racial Trait" source="Volo’s Guide to Monsters" id="ID_WOTC_VGTM_RACIAL_TRAIT_AASIMAR_HEALING_HANDS">
+		<description>
+			<html>&lt;p&gt;As an action, you can touch a creature and cause it to regain a number of hit points equal to your level. Once you use this trait, you can't use it again until you finish a long rest.&lt;/p&gt;</html>
+		</description>
+		<sheet action="Action" usage="1/Long Rest">
+			<description>You can touch a creature and cause it to regain {{aasimar:healing-hands}} hp.</description>
+		</sheet>
+		<rules>
+			<stat name="aasimar:healing-hands" value="level" />
+		</rules>
+	</element>
+	<element name="Light Bearer" type="Racial Trait" source="Volo’s Guide to Monsters" id="ID_WOTC_VGTM_RACIAL_TRAIT_AASIMAR_LIGHT_BEARER">
+		<description>
+			<html>&lt;p&gt;You know the light cantrip. Charisma is your spellcasting ability for it.&lt;/p&gt;</html>
+		</description>
+		<sheet>
+			<description>You know the light cantrip. (Spellcasting: Charisma)</description>
+		</sheet>
+		<rules>
+			<grant type="Spell" id="ID_PHB_SPELL_LIGHT" />
+		</rules>
+	</sheet>
 
 <!--Needs editing and inclusion of 5th level spell addition with code that notes they get it at 5th level-->
     <sheet usage="1/Long Rest">
